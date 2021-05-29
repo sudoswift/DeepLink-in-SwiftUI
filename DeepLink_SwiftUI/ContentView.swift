@@ -16,8 +16,12 @@ struct ContentView: View {
 //                    Text("할일 목록")
                     Label("할일 목록", systemImage: "list.number")
                 }
+            MyProfileView()
+                .tabItem {
+                    Label("프로필", systemImage: "person.circle")
+                }
         } // TabView
-        
+        .accentColor(.red) // TabView change color
     }
 }
 
