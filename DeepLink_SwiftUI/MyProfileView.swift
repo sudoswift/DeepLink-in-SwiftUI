@@ -23,18 +23,21 @@ struct MyProfileView: View {
                         .strokeBorder(Color.red, lineWidth: 10)
                     )
                     .frame(width: 200, height: 200)
-                    .shadow(color: .black, radius: 10, x: 2, y: 3)
+                    .shadow(color: .black, radius: 5, x: 2, y: 3)
                     .padding(.bottom, 20)
                 Text("Sudo Swift")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .padding(.bottom)
-                Text("Jump to Github")
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color.black)
-                    .cornerRadius(20)
+                Link(destination: URL(string: "https://github.com/sudoswift/")!, label: {
+                    Text("Jump to Github")
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.black)
+                        .cornerRadius(20)
+                })
+
             } // VStack
         }
     }
