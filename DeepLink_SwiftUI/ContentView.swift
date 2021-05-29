@@ -9,13 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationView{
-            List{
-                ForEach(1...20, id: \.self){
-                    Text("내 할 일 \($0)")
+        TabView{
+            ToDoListView()
+                .tabItem {
+//                    Image(systemName: "list.number")
+//                    Text("할일 목록")
+                    Label("할일 목록", systemImage: "list.number")
                 }
-            }
-        }
+        } // TabView
+        
     }
 }
 
