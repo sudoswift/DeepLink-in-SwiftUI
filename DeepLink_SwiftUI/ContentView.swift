@@ -9,8 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView{
+            List{
+                ForEach(1...20, id: \.self){
+                    Text("내 할 일 \($0)")
+                }
+            }
+        }
     }
 }
 
