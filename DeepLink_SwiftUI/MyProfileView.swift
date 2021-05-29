@@ -9,16 +9,34 @@ import SwiftUI
 
 struct MyProfileView: View {
     var body: some View {
-        Rectangle()
-            .frame(width: 80, height: 80)
-            .foregroundColor(.purple)
-            .cornerRadius(10)
-            .overlay(
-            Text("프로필")
-                .font(.title2)
-                .fontWeight(.bold)
-                .foregroundColor(Color.white)
-            )
+        ZStack {
+            Color.yellow
+                .ignoresSafeArea(.all)
+            // edgeIgnoringSafeArea 대신 iOS 14.6 이후로는 ignoresSafeArea 수정자를 사용해야 한다.
+            VStack {
+                Image("아이번")
+                    .resizable()
+                    .scaledToFill()
+                    .clipShape(Circle())
+                    .overlay(
+                    Circle()
+                        .strokeBorder(Color.red, lineWidth: 10)
+                    )
+                    .frame(width: 200, height: 200)
+                    .shadow(color: .black, radius: 10, x: 2, y: 3)
+                    .padding(.bottom, 20)
+                Text("Sudo Swift")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding(.bottom)
+                Text("Jump to Github")
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.black)
+                    .cornerRadius(20)
+            } // VStack
+        }
     }
 }
 
